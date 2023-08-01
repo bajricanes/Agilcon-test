@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Registered Students">
+        <lightning-datatable
+                key-field="id"
+                data={examRegistrations}
+                columns={columns}
+                hide-checkbox-column
+                onrowaction={handleDeregisterClicked}>
+        </lightning-datatable>
+    </lightning-card>
+</template>

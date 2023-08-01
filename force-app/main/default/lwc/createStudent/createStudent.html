@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Create student">
+        <lightning-record-edit-form object-api-name="Student__c" onsubmit={handleSubmit} onsuccess={handleSuccess}> 
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="6" padding="around-small">
+                    <lightning-input-field field-name="Name" padding="around-x-small"> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <lightning-input-field field-name="Surname__c"> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <lightning-input-field field-name="EMSO__c"> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6"></lightning-layout-item>
+                <lightning-layout-item size="4" padding="around-small">
+                    <lightning-input-field  field-name="Type_of_Study__c" onchange={handleTypeOfStudyChange}> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="2" padding="around-small">
+                    <template if:true={showPayer}>
+                        <lightning-input-field field-name="Payer__c"> </lightning-input-field>
+                    </template>
+                </lightning-layout-item>   
+                <lightning-layout-item size="12" padding="around-small">
+                    <lightning-button
+                        class="slds-m-top_small"
+                        type="submit"
+                        label="Save"
+                    >
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>
+
